@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Industry Detail</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href=" {% static 'plugins/fontawesome-free/css/all.min.css' %} ">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href=" {% static 'plugins/datatables-bs4/css/dataTables.bootstrap4.min.css' %} ">
+  <link rel="stylesheet" href=" {% static 'plugins/datatables-responsive/css/responsive.bootstrap4.min.css' %} ">
+  <!-- Theme style -->
+  <link rel="stylesheet" href=" {% static 'dist/css/adminlte.min.css' %} ">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href=" {% url 'dashboard' %} " class="nav-link">Home</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{% url 'detail' %}" class="nav-link active">Industry</a>
+      </li>
+    </ul>
+
+    <!-- SEARCH FORM -->
+<!--    <form class="form-inline ml-3">-->
+<!--      <div class="input-group input-group-sm">-->
+<!--        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">-->
+<!--        <div class="input-group-append">-->
+<!--          <button class="btn btn-navbar" type="submit">-->
+<!--            <i class="fas fa-search"></i>-->
+<!--          </button>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </form>-->
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+    <!--  <a class="btn btn-app">
+                 <i class="fas fa-sign-out-alt"></i> Logout
+     </a> -->
+	  <a href=" {% url 'index' %} "><button type="button" class="btn btn-info">Logout</button></a>
+	 </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href=" {% url 'dashboard' %} " class="brand-link">
+<!--      <img src=" {% static 'dist/img/AdminLTELogo.png' %} "-->
+<!--           alt="AdminLTE Logo"-->
+<!--           class="brand-image img-circle elevation-3"-->
+<!--           style="opacity: .8">-->
+      <i class="fas fa-city" style="font-size: 30px;"></i>
+      <span class="brand-text font-weight-light" style="font-size: 30px;margin-left: 5px;">Smart industry</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+<!--          <img src=" {% static 'dist/img/user2-160x160.jpg' %} " class="img-circle elevation-2" alt="User Image">-->
+        </div>
+        <div class="info">
+          <a href=" {% url 'dashboard' %} " style="font-size: 21px;margin-left: 27px;" class="d-block">Administrator</a>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item">
+            <a href=" {% url 'dashboard' %}" class="nav-link ">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Dashboard
+
+              </p>
+            </a>
+
+          </li>
+		    <li class="nav-item">
+            <a href=" {% url 'admin' %} " class="nav-link ">
+               <i class="nav-icon fas fa-user-friends"></i>
+              <p>
+                ADD EMPLOYEE
+
+              </p>
+            </a>
+
+          </li>
+          <li class="nav-item ">
+            <a href="{% url 'smoke' %} " class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                SMOKE SENSOR
+                <!-- <span class="right badge badge-danger">New</span> -->
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href=" {% url 'flame' %} " class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                FLAME SENSOR
+                <!-- <span class="right badge badge-danger">New</span> -->
+              </p>
+            </a>
+          </li>
+           <li class="nav-item">
+            <a href=" {% url 'ir' %} " class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                IR SENSOR
+                <!-- <span class="right badge badge-danger">New</span> -->
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href=" {% url 'ldr' %} " class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                LDR SENSOR
+                <!-- <span class="right badge badge-danger">New</span> -->
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href=" {% url 'pir' %} " class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                PIR SENSOR
+                <!-- <span class="right badge badge-danger">New</span> -->
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href=" {% url 'soil' %} " class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                SOIL SENSOR
+                <!-- <span class="right badge badge-danger">New</span> -->
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href=" {% url 'temp' %} " class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                TEMP SENSOR
+                <!-- <span class="right badge badge-danger">New</span> -->
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href=" {% url 'ultrasonic' %} " class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                ULTRASONIC SENSOR
+                <!-- <span class="right badge badge-danger">New</span> -->
+              </p>
+            </a>
+          </li>
+           <li class="nav-item">
+            <a href=" {% url 'rfid' %} " class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                RFID SENSOR
+                <!-- <span class="right badge badge-danger">New</span> -->
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href=" {% url 'attendance' %} " class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                VIEW ATTENDANCE
+                <!-- <span class="right badge badge-danger">New</span> -->
+              </p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 style="text-align: center;">Smart Industry</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href=" {% url 'dashboard' %} ">Home</a></li>
+
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <div style="height: 450px;width: 700px;padding-left: 21px;background-color: cornsilk;padding: 8px 10px 10px 20px;font-size: 18px;">
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In the growing world, the life of the human being is mainly dependent on industries. Industries not only make the Life easy but also brings innovations in the lifestyle of people. And it also contributes largely to GDP of the country. With growing industrialisation there are some drawbacks of the industry. According to the facts, 51% of the pollution is caused by the industry. Along with that large amount of electricity is also wasted. Some other problems such as security, employee’s entry etc... Therefore, with the help of Python & IOT were trying to bring revolution in the industries. This project is about to save energy, increase security, regular air quality check which will make the industry smarter and more innovative. It will also help to save energy and save money.</p>
+      <p>Smart Industries is all about saving energy, increasing security, keeping a regular air quality check and so on. For keeping track of the above mentioned activities various IoT sensors such as RFID card , Human Presence Identification , Air Quality Measurements and many more according to the need of activity are set up which will make the industry more smarter and innovative and hence will help us to save energy as well as reduce the overall cost.</p>
+    </div>
+    <div style="height: 450px;width: 700px;float: right;margin: -450px 15px 0px 0px;">
+      <img src="{% static 'dist/img/detail.jpg' %}" style="height: 450px;width: 700px;">
+    </div>
+    <div style="height: 230px;width: 1427px;margin-top: 20px;background-color: cornsilk;">
+      <div style="height: 200px;width: 700px;margin-top: 32px;float:left;margin-left: 21px;text-align: center;">
+        <h4 style="font-size: 30px;">Address : </h4>
+        <p style="font-size: 21px;">Gujarat Mineral Development Corporation Ltd. </p>
+        <p style="font-size: 21px;">Khanij Bhavan, 132 - Ring Road Gujarat University Ground, Vastrapur Ahmedabad - 380052</p>
+      </div>
+      <div style="height: 200px;width: 670px;margin-top: 28px;float:left;text-align: center;">
+        <h4 style="margin-top: 10px;">Email Us : </h4>
+        <h5>info@smart-industry.tech</h5>
+        <h4 style="margin-top: 29px;">Contact Us : </h4>
+        <h5>(+91) 91067 31884</h5>
+      </div>
+    </div>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src=" {% static 'plugins/jquery/jquery.min.js' %} "></script>
+<!-- Bootstrap 4 -->
+<script src=" {% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %} "></script>
+<!-- DataTables -->
+<script src=" {% static 'plugins/datatables/jquery.dataTables.min.js' %} "></script>
+<script src=" {% static 'plugins/datatables-bs4/js/dataTables.bootstrap4.min.js' %} "></script>
+<script src=" {% static 'plugins/datatables-responsive/js/dataTables.responsive.min.js' %} "></script>
+<script src=" {% static 'plugins/datatables-responsive/js/responsive.bootstrap4.min.js' %} "></script>
+<!-- AdminLTE App -->
+<script src=" {% static 'dist/js/adminlte.min.js' %} "></script>
+<!-- AdminLTE for demo purposes -->
+<script src=" {% static 'dist/js/demo.js' %} "></script>
+
+</body>
+</html>
